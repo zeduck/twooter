@@ -9,24 +9,57 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      likes: {
+        Row: {
+          created_at: string
+          id: number
+          twoot_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          twoot_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          twoot_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "likes_twoot_id_fkey"
+            columns: ["twoot_id"]
+            isOneToOne: false
+            referencedRelation: "twoots"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "likes_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string
           id: string
-          name: string
-          username: string
+          user_name: string
         }
         Insert: {
           avatar_url: string
           id: string
-          name: string
-          username: string
+          user_name: string
         }
         Update: {
           avatar_url?: string
           id?: string
-          name?: string
-          username?: string
+          user_name?: string
         }
         Relationships: [
           {
