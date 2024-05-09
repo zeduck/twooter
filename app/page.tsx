@@ -8,7 +8,9 @@ export default async function Page() {
   const supabase = createServerComponentClient<Database>({ cookies });
   const { data: { session }} = await supabase.auth.getSession();
   if (!session) redirect('/login');
-  const { data: twoots } = await supabase.from('twoots').select()
+  const { data: twoots } = await supabase
+    .from('twoots')
+    .select('*, auth.profiles(*)');
 
   return (
     <>
