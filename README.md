@@ -1,4 +1,6 @@
-# A Simple Twitter Clone
+# Simple Twitter Clone
+
+made with Next.js + Supabase
 
 https://twooter-seven.vercel.app/
 
