@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SpeedInsights/>
-        <div className="bg-gray-900 min-h-screen flex">{children}</div>
+        <div className="bg-black min-h-screen flex">{children}</div>
       </body>
     </html>
   );

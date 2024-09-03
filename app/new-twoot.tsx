@@ -13,7 +13,7 @@ export default function NewTwoot({ user } : { user: User }) {
   };
   
   return (
-    <form action={addTwoot} className="border border-gray-800 border-t-0">
+    <form action={addTwoot} className="border border-gray-700 border-t-0">
       <div className="flex py-8 px-4">
         <div className="h-12 w-12">
           <Image 

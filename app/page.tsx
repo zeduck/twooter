@@ -26,8 +26,8 @@ export default async function Page() {
   })) ?? []
 
   return (
-    <div className='w-full max-w-xl mx-auto'>
-      <div className='flex justify-between px-4 py-6 border border-gray-800 border-t-0'>
+    <div className='w-full max-w-3xl mx-auto'>
+      <div className='flex justify-between px-4 py-6 border border-gray-700 border-t-0'>
         <h1 className='text-xl font-bold'>Home</h1>
         <AuthButtonServer/>
       </div>

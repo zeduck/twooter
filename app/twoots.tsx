@@ -37,7 +37,7 @@ export default function Twoots({ twoots } : { twoots : TwootWithAuthor[] }) {
   }, [router, supabase]);
 
   return optimisticTwoots.map(twoot => (
-    <div key={twoot.id} className="border border-gray-800 border-t-0 px-4 py-8 flex">
+    <div key={twoot.id} className="border border-gray-700 border-t-0 px-4 py-8 flex">
       <div className="h-12 w-12">
         <Image
           className="rounded-full"
@@ -47,14 +47,18 @@ export default function Twoots({ twoots } : { twoots : TwootWithAuthor[] }) {
           height={48}
         />
       </div>
-      <div className="ml-4">
+      <div className="ml-4 w-full">
         <p> 
           <span className="font-bold">
             {twoot.author.user_name} 
           </span>
         </p> 
-        <p> {twoot.title} </p>
-        <Likes twoot={twoot} addOptimisticTwoot={addOptimisticTwoot}/>
+
+        <div className="flex flex-row justify-between align-bottom">
+          <p> {twoot.title} </p>
+          <Likes twoot={twoot} addOptimisticTwoot={addOptimisticTwoot}/>
+        </div>
+
       </div>
     </div>
   ))
